@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
-  "devDependencies": {
-    "typescript": "^4.8.4"
+  "scripts": {
+    "start": "tsc && node dist/server.js"
   },
   "dependencies": {
     "fastify": "^4.9.2"
+  },
+  "devDependencies": {
+    "typescript": "^4.8.4"
   }
 }
