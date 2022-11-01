@@ -131,3 +131,5 @@ dist
 
 # Dev environment
 .vscode
+*.db
+*.db-journal
