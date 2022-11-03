@@ -1,5 +1,4 @@
-import { StatusBar } from 'expo-status-bar'
-import { NativeBaseProvider, Center, Text } from 'native-base'
+import { NativeBaseProvider, StatusBar } from 'native-base'
 import {
   useFonts,
   Roboto_400Regular,
@@ -21,7 +20,12 @@ export default function App() {
 
   return (
     <NativeBaseProvider theme={THEME}>
-      <StatusBar style='light' />
+      <StatusBar
+        barStyle='light-content'
+        backgroundColor='transparent'
+        translucent
+      />
+
       {fontsLoaded ? <SignIn /> : <Loading />}
     </NativeBaseProvider>
   )
