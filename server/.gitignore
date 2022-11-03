@@ -133,3 +133,4 @@ dist
 .vscode
 *.db
 *.db-journal
+prisma/debug
