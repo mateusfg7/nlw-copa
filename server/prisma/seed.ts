@@ -7,6 +7,7 @@ async function main() {
     data: {
       name: 'John Doe',
       email: 'john.doe@gmail.com',
+      googleId: '41303450210321',
       avatarUrl: 'https://github.com/mateusfg7.png',
     },
   })
