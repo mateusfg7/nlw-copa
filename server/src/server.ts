@@ -1,9 +1,11 @@
 import Fastify from 'fastify'
 import cors from '@fastify/cors'
+import jwt from '@fastify/jwt'
 
 import { poolRoutes } from './routes/pool'
 import { userRoutes } from './routes/user'
 import { guessRoutes } from './routes/guess'
+import { authRoutes } from './routes/auth'
 
 async function bootstrap() {
   const fastify = Fastify({
@@ -14,9 +16,14 @@ async function bootstrap() {
     origin: true,
   })
 
-  fastify.register(poolRoutes)
-  fastify.register(userRoutes)
-  fastify.register(guessRoutes)
+  await fastify.register(jwt, {
+    secret: `${process.env.JWT_SECRET}`,
+  })
+
+  await fastify.register(authRoutes)
+  await fastify.register(poolRoutes)
+  await fastify.register(userRoutes)
+  await fastify.register(guessRoutes)
 
   await fastify.listen({ port: 3333 })
 }
